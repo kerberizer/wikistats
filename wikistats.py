@@ -91,8 +91,8 @@ def peruser(wiki, username, asof=dt.utcnow(), since=PERUSER_FROM_DATE, months_si
 
 def init_parser():
     parser = argparse.ArgumentParser(
-            description='Bulgarian Wikinews user activity statistics',
-            epilog='For more information, visit https://meta.wikimedia.org/wiki/PCP/N:BG/STAT',
+            description='Wikimedia Foundation projects user activity statistics',
+            epilog='For a practical example, visit https://meta.wikimedia.org/wiki/PCP/N:BG/STAT',
             )
     parser.add_argument(
             'wiki',
