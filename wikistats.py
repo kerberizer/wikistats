@@ -67,7 +67,8 @@ def peruser(wiki, username, asof=dt.utcnow(), since=PERUSER_FROM_DATE, months_si
         if months_since:
             if int(year) < int(months_since.split('-')[0]):
                 continue
-            elif int(month) < int(months_since.split('-')[1]):
+            if int(year) < int(months_since.split('-')[0]) and \
+                    int(month) == int(months_since.split('-')[1]):
                 continue
         try:
             stats['months'][year + ' ' + month] += 1
@@ -77,7 +78,8 @@ def peruser(wiki, username, asof=dt.utcnow(), since=PERUSER_FROM_DATE, months_si
         if weeks_since:
             if int(year) < int(weeks_since.split('-')[0]):
                 continue
-            elif int(week) < int(weeks_since.split('-')[1]):
+            if int(year) < int(weeks_since.split('-')[0]) and \
+                    int(week) == int(weeks_since.split('-')[1]):
                 continue
         try:
             stats['weeks'][year + ' ' + week] += 1
