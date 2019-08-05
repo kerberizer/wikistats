@@ -171,4 +171,4 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 
-# vim: set ts=4 sts=4 sw=4 et:
+# vim: set ts=4 sts=4 sw=4 tw=100 et:
