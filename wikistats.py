@@ -15,7 +15,7 @@ PERUSER_FROM_DATE = '2008-12-01T00:00:00Z'
 MAXCONTRIB = 10000
 
 
-def alltime(wiki, asof=dt.utcnow(), since=ALLTIME_FROM_DATE, excludes=None):
+def alltime(wiki, asof=dt.utcnow(), since=ALLTIME_FROM_DATE, namespaces=(), excludes=None):
     alltime_active_users = []
     active_users = {}
     for user in wiki.allusers():
@@ -23,7 +23,8 @@ def alltime(wiki, asof=dt.utcnow(), since=ALLTIME_FROM_DATE, excludes=None):
             alltime_active_users.append(user['name'])
     for user in alltime_active_users:
         w_user = pwb.User(wiki, user)
-        for contrib in w_user.contributions(total=MAXCONTRIB, end=since, start=asof):
+        for contrib in w_user.contributions(total=MAXCONTRIB, end=since, start=asof,
+                                            namespaces=namespaces):
             if excludes and contrib[0].title() in excludes:
                 continue
             try:
