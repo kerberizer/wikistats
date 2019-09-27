@@ -11,7 +11,7 @@ from datetime import datetime as dt
 
 # Hard-coded defaults as global constants.
 ALLTIME_FROM_DATE = '2017-07-01T00:00:00Z'
-PERUSER_FROM_DATE = '2008-12-01T00:00:00Z'
+PERUSER_FROM_DATE = '2002-01-01T00:00:00Z'
 MAXCONTRIB = 10000
 
 
